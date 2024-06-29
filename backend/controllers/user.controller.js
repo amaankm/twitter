@@ -167,7 +167,7 @@ export const updateUser = async (req, res) => {
 
     res.status(200).json(user);
   } catch (error) {
-    console.log("Error in getSuggestedUser controller", error.message);
+    console.log("Error in updateUser controller", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
