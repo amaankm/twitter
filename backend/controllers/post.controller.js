@@ -51,10 +51,6 @@ export const getFollowingPosts = async (req, res) => {
         select: "-password",
       });
 
-    if (feedPosts.length === 0) {
-      return res.status(200).json({ message: "No posts found" });
-    }
-
     res.status(200).json(feedPosts);
   } catch (error) {
     console.log("Error in getFollowingPosts controller", error.message);
