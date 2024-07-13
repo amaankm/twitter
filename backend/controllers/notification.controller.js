@@ -17,9 +17,6 @@ export const getNotifications = async (req, res) => {
 
     await Notification.updateMany({ to: userId }, { read: true });
 
-    if (notifications.length === 0) {
-      return res.status(200).json({ message: "No notifications" });
-    }
     res.status(200).json(notifications);
   } catch (error) {
     console.log("Error in getNotifications controller", error.message);
